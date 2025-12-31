@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE SQUAD ARCHIVE | 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Bungee&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-green: #00ff88;
+            --neon-pink: #ff0077;
+            --neon-yellow: #fff200;
+            --bg: #080808;
+        }
+
+        * { cursor: none; } /* Custom cursor logic below */
+
+        body, html {
+            margin: 0; padding: 0;
+            background: var(--bg);
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Cursor */
+        #cursor {
+            position: fixed; width: 20px; height: 20px;
+            background: var(--neon-green); border-radius: 50%;
+            pointer-events: none; z-index: 9999;
+            mix-blend-mode: difference; transition: transform 0.1s;
+        }
+
+        section {
+            min-height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            padding: 80px 20px; position: relative;
+            text-align: center; overflow: hidden;
+        }
+
+        /* Typography */
+        h1 { font-family: 'Bungee', cursive; font-size: clamp(2rem, 8vw, 5rem); margin: 0; }
+        .outline { font-family: 'Bungee Outline', cursive; color: var(--neon-pink); }
+        .glitch { animation: glitch 1s linear infinite; }
+
+        @keyframes glitch {
+            2%, 64% { transform: translate(2px,0) skew(0deg); }
+            4%, 60% { transform: translate(-2px,0) skew(0deg); }
+            62% { transform: translate(0,0) skew(5deg); }
+        }
+
+        /* Card System */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px; border-radius: 40px;
+            max-width: 800px; width: 85%; transition: 0.5s;
+        }
+
+        .btn {
+            border: 2px solid var(--neon-green); background: transparent;
+            color: var(--neon-green); padding: 15px 40px; font-family: 'Bungee';
+            border-radius: 10px; cursor: pointer; margin-top: 20px;
+        }
+
+        .btn:hover { background: var(--neon-green); color: black; box-shadow: 0 0 20px var(--neon-green); }
+
+        /* Timeline Styles */
+        .timeline { border-left: 2px solid var(--neon-pink); padding: 20px; text-align: left; }
+        .event { margin-bottom: 30px; position: relative; padding-left: 20px; }
+        .event::before { content: ''; position: absolute; left: -11px; top: 5px; width: 20px; height: 20px; background: var(--neon-pink); border-radius: 50%; }
+
+    </style>
+</head>
+<body>
+
+    <div id="cursor"></div>
+
+    <section>
+        <h1 class="glitch">SQUAD</h1>
+        <h1 class="outline">ARCHIVE</h1>
+        <p>RE-ENABLING PROTOCOLS FOR 2026...</p>
+        <button class="btn" onclick="next(1)">DECRYPT MEMORIES</button>
+    </section>
+
+    <section>
+        <h1>GROUP STATS 📊</h1>
+        <div class="glass-card">
+            <p>Total Unread Messages: <b>99,999+</b></p>
+            <p>Hours spent on Voice Calls: <b>∞</b></p>
+            <p>Food Deliveries Ordered: <b>Too many</b></p>
+        </div>
+    </section>
+
+    <section>
+        <h1>2025 TIMELINE ⏳</h1>
+        <div class="glass-card">
+            <div class="timeline">
+                <div class="event"><b>Jan:</b> The "New Year, Same Us" lie.</div>
+                <div class="event"><b>June:</b> That one trip we actually planned.</div>
+                <div class="event"><b>Oct:</b> The Great Group Chat War.</div>
+                <div class="event"><b>Dec:</b> Surviving 2025.</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h1>THE ROSTER 👤</h1>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+            <div class="glass-card" style="width: 150px;"><b>The Brain</b></div>
+            <div class="glass-card" style="width: 150px;"><b>The Muscle</b></div>
+            <div class="glass-card" style="width: 150px;"><b>The Wildcard</b></div>
+        </div>
+    </section>
+
+    <section>
+        <h1 class="outline">INSIDE JOKES</h1>
+        <div class="glass-card">
+            <p>"If you know, you know."</p>
+            <marquee scrollamount="10">Joke #1 • Joke #2 • Joke #3 • Joke #4 • Joke #5</marquee>
+        </div>
+    </section>
+
+    <section>
+        <h1>THE VENTING ROOM 🎤</h1>
+        <div class="glass-card">
+            <p>Type a message to the group (It goes nowhere):</p>
+            <input type="text" style="width: 80%; padding: 10px; border-radius: 10px; border: none;" placeholder="Say something...">
+            <button class="btn" onclick="alert('Message sent to the void!')">SEND</button>
+        </div>
+    </section>
+
+    <section>
+        <h1>SQUAD SOUNDBOARD 🔊</h1>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <button class="btn" onclick="alert('Playing: Bruh Moment')">BRUH</button>
+            <button class="btn" onclick="alert('Playing: Emotional Damage')">EMOTIONAL DAMAGE</button>
+        </div>
+    </section>
+
+    <section>
+        <h1>HUNTING GROUNDS 📍</h1>
+        <div class="glass-card">
+            <p>Our Favorite Spot: <b>[Insert Place Name]</b></p>
+            <p>Secondary HQ: <b>[Insert Place Name]</b></p>
+        </div>
+    </section>
+
+    <section>
+        <h1>LEAVE IN 2025 🚫</h1>
+        <div class="glass-card" style="color: var(--neon-pink);">
+            <p>❌ Being Left on Read</p>
+            <p>❌ "I'm 5 mins away" (When you're in bed)</p>
+            <p>❌ Planning trips that never happen</p>
+        </div>
+    </section>
+
+    <section>
+        <h1>PHOTO DUMP 🎞️</h1>
+        <div class="glass-card">
+            <p>Imagine 50+ photos of us looking like absolute idiots.</p>
+        </div>
+    </section>
+
+    <section>
+        <h1>FOR YOUR EYES ONLY 🔒</h1>
+        <div class="glass-card">
+            <p id="secret">##########</p>
+            <button class="btn" onclick="document.getElementById('secret').innerText='YOU ARE ALL LEGENDS!'">DECODE</button>
+        </div>
+    </section>
+
+    <section>
+        <h1>2026 PREDICTIONS 🔮</h1>
+        <div class="glass-card">
+            <p>Who gets married? <b>Nobody.</b></p>
+            <p>Who gets rich? <b>All of us.</b></p>
+        </div>
+    </section>
+
+    <section>
+        <h1 class="outline">THE ANTHEM</h1>
+        <div class="glass-card">
+            <p>Volume: ██████████ 100%</p>
+            <p>Now Playing: <b>Friends Forever (Techno Remix)</b></p>
+        </div>
+    </section>
+
+    <section>
+        <h1>CAST YOUR VOTE 🗳️</h1>
+        <div class="glass-card">
+            <p>Best memory of the year?</p>
+            <button class="btn">Option A</button> <button class="btn">Option B</button>
+        </div>
+    </section>
+
+    <section>
+        <h1>HAPPY NEW YEAR</h1>
+        <p>2026 IS OURS.</p>
+        <button class="btn" onclick="window.scrollTo(0,0)">LOOP THE CHAOS</button>
+    </section>
+
+    <script>
+        // Custom Cursor Movement
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Navigation
+        function next(i) {
+            const sections = document.querySelectorAll('section');
+            sections[i].scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Reveal animations on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.filter = 'blur(0px)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(s => {
+            s.style.opacity = '0';
+            s.style.filter = 'blur(10px)';
+            s.style.transition = 'all 1s ease-in-out';
+            observer.observe(s);
+        });
+    </script>
+</body>
+</html>
